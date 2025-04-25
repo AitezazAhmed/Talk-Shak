@@ -37,7 +37,7 @@ export const useAuthStore=create((set)=>({
         set({ isLoggingIn: true });
         try {
           const res = await axiosInstance.post("/auth/login", data);
-          console.log(res)
+          console.log(res.data)
           set({ authUser: res.data });
           toast.success("Log IN successfully");
         } catch (error) {
@@ -53,7 +53,7 @@ export const useAuthStore=create((set)=>({
         set({ isUpdatingProfile: true });
         try {
           const res = await axiosInstance.put("/auth/update-profile", data);
-          console.log(res)
+          console.log(res.data)
           set({ authUser: res.data }); // Update global authUser after profile update
           toast.success("Profile updated successfully");
         } catch (error) {
