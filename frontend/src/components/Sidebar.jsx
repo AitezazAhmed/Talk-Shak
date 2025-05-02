@@ -53,7 +53,6 @@ const Sidebar = () => {
               ${selectedUser?._id === user._id ? "bg-base-300 ring-1 ring-base-300" : ""}
             `}
           >
-          
             <div className="relative   ">
               <img
                 src={user.profilePic || avatarpng}
