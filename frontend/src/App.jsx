@@ -6,7 +6,7 @@ import SettingPage from './pages/SettingPage'
 import SignUpPage from './pages/SignUpPage'
 import LogInPage from './pages/LogInPage'
 import ProfilePage from './pages/ProfilePage'
-import { useAuthStore } from './store/UseAuthStore'
+import { useAuthStore } from './store/useAuthStore'
 import {useThemeStore } from "./store/useThemeStore";
 import { Loader } from "lucide-react";
 import {Toaster} from "react-hot-toast"
