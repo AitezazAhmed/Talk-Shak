@@ -2,7 +2,6 @@ import { useState,useEffect} from "react";
 import { useAuthStore } from "../store/UseAuthStore"
 import { Camera, Loader, Mail, User } from "lucide-react";
 import avatarpng from '../assets/avatar.png';
-import imageCompression from 'browser-image-compression';
 const ProfilePage = () => {
     
   const { authUser, isUpdatingProfile, updateProfile ,checkAuth ,isCheckingAuth} = useAuthStore();
