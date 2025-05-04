@@ -1,5 +1,5 @@
 import { useState,useEffect} from "react";
-import { useAuthStore } from "../store/UseAuthStore"
+import { useAuthStore } from "../store/useAuthStore"
 import { Camera, Loader, Mail, User } from "lucide-react";
 import avatarpng from '../assets/avatar.png';
 const ProfilePage = () => {
