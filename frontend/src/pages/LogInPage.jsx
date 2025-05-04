@@ -1,6 +1,6 @@
 import {React,useState} from 'react'
 import toast from "react-hot-toast";
-import { useAuthStore } from "../store/UseAuthStore"
+import { useAuthStore } from "../store/useAuthStore"
 import loginImage from '../assets/login.jpg';
 import { Eye, EyeOff, Loader2 } from 'lucide-react';
 import {Link} from 'react-router-dom'
