@@ -12,12 +12,13 @@ import { app, server } from "./lib/socket.js";
 
 dotenv.config();
 
-const PORT = process.env.PORT;
+
 
 
 app.use(express.json());
 app.use(express.json({ limit: '100mb' }));
 app.use(express.urlencoded({ limit: '100mb', extended: true }));
+const PORT = process.env.PORT;
 app.use(cookieParser());
 app.use(
   cors({
