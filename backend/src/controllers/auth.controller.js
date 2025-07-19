@@ -31,7 +31,7 @@ export const signup = async (req, res) => {
       res.cookie("uid", token, {
         maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
         httpOnly: true,
-        sameSite: "strict",
+        sameSite: "None",
         secure: process.env.NODE_ENV !== "development",
       });
   
@@ -64,7 +64,7 @@ if(!iscorrectPassword){
   res.cookie("uid", token, { 
     maxAge: 7 * 24 * 60 * 60 * 1000, // MS
     httpOnly: true, // prevent XSS attacks cross-site scripting attacks
-    sameSite: "strict", // CSRF attacks cross-site request forgery attacks
+    sameSite: "None", // CSRF attacks cross-site request forgery attacks
     secure: process.env.NODE_ENV !== "development",
    });
    res.status(201).json({
@@ -86,7 +86,7 @@ export const logout = (req, res) => {
   try {
     res.clearCookie("uid", {
       httpOnly: true,
-      sameSite: "strict",
+      sameSite: "None",
       secure: process.env.NODE_ENV !== "development",
     });
    return res.status(200).json({ message: "Logged out successfully" });
