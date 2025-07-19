@@ -8,6 +8,10 @@ export const signup = async (req, res) => {
       if(!fullName || !email || !password){
         return res.status(400).json({ message: "All field are required" });
       }
+           const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({ message: "Email already in use" });
+    }
       if (password.length < 6) {
         return res.status(400).json({ message: "Password must be at least 6 characters long" });
       }
