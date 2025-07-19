@@ -16,19 +16,25 @@ const ProfilePage = () => {
     ); // Access Zustand store
   const [selectedImg, setSelectedImg] = useState(null);
   
-  const handleImageUpload = async (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = async () => {
-      const base64Image = reader.result;
-      setSelectedImg(base64Image);
-      // Update the profile with the new image
-      await updateProfile({ profilePic: base64Image });
-    };
- 
+const handleImageUpload = async (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  // Optional: Preview image
+  const reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onload = () => {
+    setSelectedImg(reader.result); // For preview only
   };
+
+  // Prepare FormData to send the file
+  const formData = new FormData();
+  formData.append("profilePic", file);
+
+  // Call updateProfile and pass the formData
+  await updateProfile(formData);
+};
+
 
   return (
     <div className="h-screen pt-20">
