@@ -84,13 +84,11 @@ export const useAuthStore=create((set,get)=>({
       connectSocket:()=>{
         const {authUser}=get()
         if(!authUser || get().socket?.connected) return;
-        const socket = io(BASE_URL,{
-          query: {
-            userId: authUser._id,
-               withCredentials: true,
+       const socket = io("https://talk-shak-8.onrender.com", {
+  query: { userId: authUser._id },
+  withCredentials: true,
   transports: ["polling"],
-          },
-        })
+});
         socket.connect()
         set({ socket:socket });
         socket.on("getOnlineUsers", (userIds) => {
