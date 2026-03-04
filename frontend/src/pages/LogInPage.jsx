@@ -34,7 +34,7 @@ const LogInPage = () => {
        </div>
    
        <div className="p-10 flex flex-col justify-center">
-         <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Log In kro</h2>
+         <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Log In</h2>
          
           <form className="space-y-5" onSubmit={handleSubmit}>
         
